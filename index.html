@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f5f7">
+  <meta name="description" content="AndroPortHub — mobile gaming and port community.">
+  <title>AndroPortHub</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f3f4f6;
+      --surface: #ffffff;
+      --text: #24282e;
+      --muted: #737982;
+      --line: #e1e4e8;
+      --accent: #e75b35;
+      --nav: #292d33;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { min-height: 100%; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--page);
+      color: var(--text);
+      font: 15px/1.5 Arial, Helvetica, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+    .header-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 76px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .header-note { color: var(--muted); font-size: 13px; }
+    .category-bar { background: var(--nav); color: #fff; }
+    .category-inner {
+      width: min(var(--max), calc(100% - 32px));
+      min-height: 45px;
+      margin: 0 auto;
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .category-inner a {
+      display: flex;
+      align-items: center;
+      padding: 0 17px;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      border-right: 1px solid #ffffff12;
+    }
+    .category-inner a:first-child { padding-left: 0; padding-right: 20px; }
+    .category-inner a:hover, .category-inner a[aria-current="page"] {
+      background: #3a3f47;
+      color: #fff;
+    }
+    .page-shell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 20px auto 0;
+      min-height: calc(100vh - 185px);
+    }
+    /* Intentionally empty content area. Add your site content here later. */
+    .empty-content { min-height: 1px; }
+    .site-footer {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 18px 0 24px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+    @media (max-width: 600px) {
+      .header-inner { min-height: 66px; gap: 10px; }
+      .brand { font-size: 21px; }
+      .brand-mark { width: 32px; height: 32px; font-size: 18px; }
+      .header-note { display: none; }
+      .category-inner a { padding: 0 13px; }
+      .page-shell { margin-top: 14px; min-height: calc(100vh - 165px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="./" aria-label="AndroPortHub home">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>AndroPortHub</span>
+      </a>
+      <span class="header-note">Mobile gaming portal</span>
+    </div>
+  </header>
+
+  <nav class="category-bar" aria-label="Main navigation">
+    <div class="category-inner">
+      <a href="./" aria-current="page">Home</a>
+      <a href="#android">Android</a>
+      <a href="#games">Games</a>
+      <a href="#ports">Ports</a>
+      <a href="#guides">Guides</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <div class="empty-content" aria-label="Empty content area"></div>
+  </main>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> AndroPortHub</span>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
