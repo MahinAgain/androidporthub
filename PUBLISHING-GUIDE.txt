@@ -1,0 +1,39 @@
+ANDROPORT HUB — GAME POST PUBLISHING GUIDE
+===========================================
+
+WHAT IS INCLUDED
+- index.html: homepage with the existing AndroPortHub header/cover design and a link to Game Posts.
+- game-posts.html: page listing published game articles (starts empty).
+- game-post-template.html: reusable article template. Copy it and rename the copy for each article.
+- Your existing cover.png is NOT included; keep the one already in your GitHub repository.
+
+IMPORTANT BEFORE UPLOADING
+This package is designed for your current repository:
+https://github.com/MahinAgain/androidporthub
+
+HOW TO ADD THE FILES ON GITHUB FROM YOUR PHONE
+1. Open the repository link above and tap the small + beside "Go to file".
+2. Choose "Upload files".
+3. Extract this ZIP first if your phone offers an Extract option. Upload the four individual files from the extracted folder, not the ZIP itself.
+4. Because index.html already exists, uploading this replacement may require GitHub's file editor to replace it rather than "Upload files". If you see a conflict, do not delete the existing file; open index.html, choose Edit, replace its content with the new index.html from this package, and commit.
+5. Upload game-posts.html and game-post-template.html to the repository root.
+6. Commit the changes to main. GitHub Pages should redeploy automatically.
+7. Open https://mahinagain.github.io/androidporthub/ and refresh. If old content remains, try a private tab or hard refresh.
+
+HOW TO PUBLISH A GAME ARTICLE
+1. In GitHub, open game-post-template.html.
+2. Copy its full contents and create a new file in the repository root named for example:
+   gta-san-andreas-android.html
+3. Paste the template and replace every REPLACE_WITH_... value with real information.
+4. If you have a cover image, upload it to the repository root and put its exact filename in the image line. Otherwise remove the img line.
+5. Replace REPLACE_WITH_OFFICIAL_URL with a verified official store/project URL. Never publish unverified or pirated downloads.
+6. Commit the new article file.
+7. Open game-posts.html and edit its main section to add a link to your article. Example:
+   <article>
+     <h2><a href="gta-san-andreas-android.html">GTA: San Andreas on Android</a></h2>
+     <p>Short, accurate summary of the article.</p>
+   </article>
+   Add one article block per published post, then commit.
+
+LIMITATION
+GitHub Pages is a static host. This system does not have a private admin dashboard, database, or automatic post submission form. Each post is an HTML file, and you manually add its link to game-posts.html.
